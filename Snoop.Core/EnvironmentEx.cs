@@ -19,7 +19,8 @@ public static class EnvironmentEx
 #if NET
         CurrentProcessPath = Environment.ProcessPath;
         CurrentProcessName = OperatingSystem.IsWindows()
-            ? Path.GetFileNameWithoutExtension(CurrentProcessPath) : Path.GetFileName(CurrentProcessPath);
+            ? Path.GetFileNameWithoutExtension(CurrentProcessPath)
+            : Path.GetFileName(CurrentProcessPath);
 #else
         using var currentProcess = Process.GetCurrentProcess();
         CurrentProcessName = currentProcess.ProcessName;

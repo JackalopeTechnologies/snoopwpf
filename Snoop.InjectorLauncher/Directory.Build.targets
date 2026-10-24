@@ -1,0 +1,10 @@
+<Project>
+  <Import Project="../Directory.build.targets" />
+
+  <!-- The .NET 10 SDK supplies Source Link for GitHub, including when targeting .NET Framework.
+       Removing the old package override uses that maintained build integration without raising
+       the launcher's target-framework requirement. Other Snoop projects keep their own setup. -->
+  <ItemGroup>
+    <PackageReference Remove="Microsoft.SourceLink.GitHub" />
+  </ItemGroup>
+</Project>

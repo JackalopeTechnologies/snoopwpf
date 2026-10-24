@@ -1,0 +1,18 @@
+<Project>
+  <Import Project="../Directory.packages.props" />
+
+  <!-- Keep SnoopMCP's injector build current without changing the standalone Snoop application. -->
+  <ItemGroup>
+    <PackageVersion Update="GitVersion.MsBuild" Version="6.8.2" />
+    <PackageVersion Update="JetBrains.Annotations" Version="2026.2.0" />
+    <PackageVersion Update="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" />
+    <!-- This repository already uses StyleCop's prerelease track. -->
+    <PackageVersion Update="StyleCop.Analyzers" Version="1.3.151-beta" />
+
+    <!-- Service Roslyn's compatible dependency ranges without shipping them with the launcher. -->
+    <PackageVersion Include="Microsoft.CodeAnalysis.Analyzers" Version="5.9.0" />
+    <PackageVersion Include="System.Collections.Immutable" Version="10.0.13" />
+    <PackageVersion Include="System.Reflection.Metadata" Version="10.0.13" />
+    <PackageVersion Include="System.Text.Encoding.CodePages" Version="10.0.13" />
+  </ItemGroup>
+</Project>
